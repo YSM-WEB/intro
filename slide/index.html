@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            .slide{
+                width: 1920px;
+                height: 200px;
+            }
+            .s1{
+                background-color: red;
+            }
+            .s2{
+                background-color: yellow;
+            }
+            .s3{
+                background-color: blue;
+            }
+            ul{
+                position: relative;
+                width: 2000em;
+                list-style:none;
+                transition: all 0.3s;
+            }
+            li{
+                list-style:none;
+                float: left;
+            }
+            #hi{
+                width: 100%;
+                height: 200px;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="hi">
+            <ul id="ul">
+                <li class="slide s1">1</li>
+                <li class="slide s2">2</li>
+                <li class="slide s3">3</li>
+            </ul>
+        </div>
+        <div id="what"></div>
+    </body>
+    <script>
+        
+    var num=1;
+    var minus=-1920;
+    function hi(){
+        if(num==3){
+            num=0;
+            document.getElementById('ul').style.left=0;    
+        }
+        else {document.getElementById('ul').style.left=minus*num;}
+        num++;
+    }
+    setInterval(hi,3000);
+    </script>
+</html>

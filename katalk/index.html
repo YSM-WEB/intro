@@ -1,0 +1,514 @@
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body{      
+        background-color: #FFEB46;
+        width: 100%;
+        height: 100%;
+    }
+    #close{
+        position: fixed;
+        right: 20px;
+        top: 20px;
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        background-color: white;
+        color: black;
+        text-align: center;
+        line-height: 25px;
+        cursor: pointer;
+        transition: 0.5s;
+        border: 5px solid beige;
+    }
+    #close:hover{
+        background-color: saddlebrown;
+    }
+    #katalk{
+        width: 900px;
+        height: 880px;
+        background-color: white;
+        color: black;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        overflow: hidden;
+    }
+    #katalkstart{
+        width: 900px;
+        height: 880px;
+        background-color: #FFEB46;
+        color: black;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 1;
+        text-align: center;
+        animation-name: ani;
+        animation-duration: 2.3s;
+        animation-delay: 0s;
+        animation-direction: normal;
+        animation-iteration-count: 1;
+        animation-play-state: running;
+        animation-fill-mode: forwards;
+        
+    }
+    @keyframes ani{
+        0%{
+            visibility: visible;
+            opacity: 1.0
+        }
+        100%{
+            visibility:hidden; 
+            opacity: 0.0;
+
+        }
+    }
+    #katalkback{
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    border-radius: 100px;
+    background-color: saddlebrown;
+    margin: 0 auto;
+    text-align: center;
+    transition: 0.5s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    }
+    #kafont{
+    text-shadow: 2px 2px 2px gray;
+    font-size: 30px;
+    color: black;
+    font-weight: 1000;
+    }
+    .useri{
+        color:white; 
+    }
+    #katalkfoot{
+        width: 100%;
+        height: 80px;
+        position: absolute;
+        bottom: 0;
+        background-color: #dcdcdc;
+    }
+    #katalkfoot td:hover .useri{
+        color: black;
+    }
+    #katalkhead{
+        height: 50px;
+        line-height: 50px;
+        width: 100%;
+    }
+    #menu{
+        display: inline-block;
+        vertical-align: middle;
+        position: absolute;
+        right: 20px;
+        top:10px;
+        cursor: pointer;
+    }
+    #title{
+        vertical-align: middle;
+        font-size: 20px;
+        font-weight: bolder;
+        margin-left: 15px;
+    }
+    #friendcnt{
+        margin-left: 10px;
+    }
+    #katalkmain{
+        height: 750px;
+        width: 100%;
+        overflow-y: auto;
+        scrollbar-height:none;
+        -ms-overflows-style:none;
+    }
+    #katalkmain::-webkit-scrollbar{
+        display: none;
+    }
+    #mainme{
+        width: 100%;
+    }
+    #mainme::after{
+        content: "";
+        height: 1px;
+        background-color: lightgray;
+        width: 860px;
+        display: block;
+        margin: auto;
+        opacity: 0.4;
+    }
+    #mainme:active{
+        background-color: gainsboro;
+    }
+    #mainmewrap{
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+    }
+    #me{
+        display: inline-block;
+        margin-left: 15px;
+        width: 45px;
+        height: 45px;
+        text-align: center;
+        border-radius: 10px;
+        background-color: skyblue;
+        vertical-align: middle;
+    }
+    .name{
+        vertical-align: middle;
+        margin-left: 35px;
+        font-size: 17px;
+        font-weight: 600;
+    }
+    .user-icon{
+        font-size: 35px;
+        color: darkgray;
+        margin-top: 5px;
+    }
+    .mainmewrap{
+        width: 100%;
+        height: 50px;
+        line-height: 50px;      
+    }
+    .mainmewrap:active{
+        background-color: gainsboro;
+    }
+    .user0{
+        display: inline-block;
+        margin-left: 15px;
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        border-radius: 10px;
+        background-color: skyblue;
+        vertical-align: middle;
+    }
+    .user1{
+        display: inline-block;
+        margin-left: 15px;
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        border-radius: 10px;
+        background-color:lightpink;
+        vertical-align: middle;
+    }
+    .user-icon2{
+        font-size: 25px;
+        color: darkgray;
+        margin-top: 5px;
+    }
+    @media(max-width:1000px){
+        
+    }
+    #katalk-user-info{
+        width: 100%;
+        height: 100%;
+        background-color: whitesmoke;
+        position: absolute;
+        top: 0;
+        left: -900px;
+        transition-duration: 0.3s;
+        opacity: 0;
+    }
+    .closebtn{
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        cursor: pointer;
+    }
+    .closebtn:hover{
+        animation: close 0.9s both;
+    }
+    @keyframes close{
+        0% {
+            transform: scale3d(1, 1, 1);
+            transform: 
+          }
+        30% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  40% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  50% {
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  65% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  75% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+    }
+    #infobtm{
+        width: 100%;
+        height: 450px;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    #infobtm-pic{
+        height: 100%;
+    }
+    #infobtm-chat{
+        height: 100%;
+    }
+    #infowrap{
+        width: 100%;
+        margin-top: 130px;
+    }
+    #infobtm-chat #infowrap{
+        padding-top: 20px;
+        border-top: 1px solid lightgray;
+    }
+    .info-user{
+        display: inline-block;
+        width:50px;
+        height: 50px;
+        text-align: center;
+        border-radius: 10px;
+        margin-left: 0;
+    }
+    #katalk-chat-form{
+        width: 100%;
+        height: 100%;
+        background-color: skyblue;
+        position: absolute;
+        top: 0;
+        opacity: 0;
+        left: -900px;
+        display: flex;
+        flex-direction: column;
+        transition-duration: 0.3s;
+    }
+    #chathead{
+        width: 100%;
+        height: 70px;
+        line-height: 70px;
+        border-bottom: 2px solid lightgray;
+    }
+    #chatmain{
+        width: 100%;
+        height: 770px;
+        overflow: auto;
+    }
+    #chatmain::-webkit-scrollbar{
+        display: none;
+    }
+    #chatbar{
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        border-top: 2px solid lightgray;
+    }
+    #chatcontent{
+        height: 40px;
+        width: 800px;
+        vertical-align: middle;
+        overflow: hidden;
+        resize: none;
+        padding-left: 2px;
+    }
+    #chatsub{
+        width: 60px;
+        height: 40px;
+        vertical-align: middle;
+    }
+    #chatuser-name{
+        font-size: 20px;
+        font-weight: bold;
+        margin-left: 20px;
+    }
+    .chatone{
+        width: 100%;
+        text-align: right;
+        padding-bottom: 5px;
+    }
+    .chattwo{
+        display: inline-block;
+        border: 1px solid gray;
+        padding: 10px;
+        margin-right: 10px;
+    }
+    .chatthree{
+        
+    }
+    .time{
+        vertical-align: bottom;
+        margin-right: 5px;
+    }
+    #katalk-chat-list-form{
+        height: 750px;
+        width: 100%;
+        background-color: white;
+        position: absolute;
+        top: 50;
+        line-height: 750px;
+        text-align: center;
+        display: none;
+     }
+</style>
+<script>
+    function randomfriend(){
+        return Math.round(Math.random()*(100-15)+15);
+    }
+    function randomuser(){
+        return Math.round(Math.random());
+    }
+    var com="'";
+    function makefriend(num){
+        document.getElementById('friendcnt').innerHTML=num;
+        for(var i=1; i<=num; i++){
+            var plus='<div class="mainmewrap" onclick="userinfo('+com+'user'+i+com+');" id="user'+i+'"><div class="user'+randomuser()+'"><i class="fas fa-user user-icon2"></i></div><span class="name">User'+i+'</span></div>';
+            document.getElementById('mainfriend').innerHTML+=plus;
+             
+        }
+    }
+    function userinfo(user){
+        var i=document.getElementById(user).childNodes[0].getAttribute("class");
+        document.getElementById('infobtm-pic').childNodes[1].childNodes[1].classList.add(i);
+        document.getElementById('username').innerHTML=document.getElementById(user).childNodes[1].innerHTML;
+        document.getElementById('katalk-user-info').style.left=0;
+        document.getElementById('katalk-user-info').style.opacity=1;
+    }
+    window.onload=function(){
+        var i=randomfriend();
+        makefriend(i);
+        document.getElementById('closebtn').addEventListener('click',function(e){
+            document.getElementById('katalk-user-info').style.left='-900px';
+            document.getElementById('katalk-user-info').style.opacity=0;
+            document.getElementById('infobtm-pic').childNodes[1].childNodes[1].classList.remove('user0');
+            document.getElementById('infobtm-pic').childNodes[1].childNodes[1].classList.remove('user1');
+        });
+        document.getElementById('chatsub').addEventListener('click',function(){
+            
+            var text=document.getElementById('chatcontent').value;
+            text=text.replace(/\n/g,'<br/>');
+            
+            this.one=document.createElement('div');
+            this.one.classList.add('chatone');
+            this.two=document.createElement('span');
+            this.two.classList.add('time');
+            this.two.innerHTML='time';
+            this.twotwo=document.createElement('div');
+            this.twotwo.classList.add('chattwo');
+            this.three=document.createElement('span');
+            this.three.classList.add('chatthree');
+            this.three.innerHTML=text;
+            
+            this.twotwo.appendChild(this.three);
+            this.one.appendChild(this.two);
+            this.one.appendChild(this.twotwo);
+            
+            document.getElementById('chatcontent').value="";
+            document.getElementById('chatcontent').focus();
+            document.getElementById('chatmain').appendChild(this.one);
+            document.getElementById('chatmain').scrollTop=document.getElementById('chatmain').scrollHeight;
+        });
+        document.getElementById('infowrap').addEventListener('click',function(){
+            document.getElementById('chatuser-name').innerHTML=document.getElementById('username').innerHTML;
+            document.getElementById('katalk-chat-form').style.left=0;
+            document.getElementById('katalk-chat-form').style.opacity=1;
+        });
+        document.getElementById('closebtn2').addEventListener('click',function(){
+            document.getElementById('katalk-chat-form').style.left='-900px';
+            document.getElementById('katalk-chat-form').style.opacity=0;
+            var remo=document.getElementById('chatmain');
+            while(remo.hasChildNodes()){
+                remo.removeChild(remo.firstChild);
+            }
+        });
+        document.getElementById('userbtn').addEventListener('click',function(){
+           document.getElementById('katalk-chat-list-form').style.display='none';
+            document.getElementById('katalkmain').style.display='block';
+            document.getElementById('title').innerHTML='친구'
+            document.getElementById('friendcnt').style.display='inline-block';
+        });
+        document.getElementById('chatbtn').addEventListener('click',function(){
+           document.getElementById('katalkmain').style.display='none';
+            document.getElementById('katalk-chat-list-form').style.display='block';
+            document.getElementById('title').innerHTML='채팅'
+            document.getElementById('friendcnt').style.display='none';
+        });
+    };
+</script>
+</head>
+<body>
+   <div id="hi"><div id="helo">hi</div></div>
+   <div id="katalkstart"><div id="katalkback"><span id="kafont">KATALK</span></div></div>
+   <div id="katalk">
+        <div id="katalkhead">
+            <span id="title">친구</span><span id="friendcnt"></span>
+            <div id="menu"><i class="fas fa-bars fa-2x"></i></div>
+        </div>
+        <div id="katalkmain">     
+            <div id="mainme">
+                <div id="mainmewrap"><div id="me"><i class="fas fa-user user-icon"></i></div><span class="name">me</span></div>
+            </div>
+            <div id="mainfriend">
+            
+            </div>
+        </div>
+        <div id="katalkfoot">
+                <table width="900px" height="80px">
+                    <tr align="center">
+                        <td style="border-right: 1px solid black;" width="450px" id="userbtn"><i class="fas fa-user fa-3x useri"></i></td>
+                        <td id="chatbtn"><i class="fas fa-comment fa-3x useri" width="450px;"></i></td>
+                    </tr>
+                </table>
+        </div>
+        <div id="katalk-user-info">
+            <i class="fas fa-angle-double-left fa-3x closebtn" id="closebtn"></i>
+            <div id="infobtm">
+                <div id="infobtm-pic">
+                    <div class="infowrap">
+                        <div class="info-user"><i class="fas fa-user user-icon"></i></div><br><h3 id="username"></h3>
+                    </div>
+                </div>
+                <div id="infobtm-chat">
+                    <div id="infowrap">
+                        <i class="fas fa-comment fa-2x"></i><br><spn>채팅</spn>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="katalk-chat-form">
+            <div id="chathead"><span id="chatuser-name"></span><i class="fas fa-angle-double-left fa-3x closebtn" id="closebtn2"></i></div>
+            <div id="chatmain">
+<!--                <div id="chatone"><span id="time">time</span><div id="chattwo"><span id="chatthree">hihihiasdgasdg</span></div></div>-->
+           
+            </div>
+            <div id="chatbar">
+                <textarea id="chatcontent"></textarea>
+                <button id="chatsub">보내기</button>
+            </div>
+        </div>
+        <div id="katalk-chat-list-form"><h1>채팅없음</h1></div>
+   </div>
+   
+    <div id="close" onclick="location.href='/intro'">
+        <span style="font-size: 50px; font-weight: 3000;">x</span>
+    </div>
+     
+</body>
+</html>

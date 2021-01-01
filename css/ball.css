@@ -1,0 +1,13 @@
+.box{ 
+        width: 4px;
+        height: 4px;
+        border-radius: 2px;
+        background-color: white;
+    }
+    #balling{
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        position: absolute;
+        top: 0;
+    }
