@@ -47,3 +47,13 @@
     color: black;
     font-weight: 1000;
 }
+#clone{
+    background-color: darkred;
+}
+#clonefont{
+    font-size: 25px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
