@@ -1,15 +1,16 @@
 #header{
             width: 100%;
             height: 70px;
+            position: relative;
         }
         
         .headwrapper{
             max-width:1300px;
             height: 100%;
-            background-color: pink;
+
             margin: auto;
             line-height: 70px;
-            position: relative;
+            position: static;
         }
         .head{
             display: inline-block;     
@@ -32,12 +33,50 @@
             margin: 0 10px;
             
         }
+.headmenu{
+    padding-right: 20px;
+}
         .headicon{
             position: absolute;
-            right: 10px;
+            right:calc((100%-1300px)/2-1px);
             font-size: 23px;
         }
         .icon{
             padding: 6px;
         }
+        .menu-2{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 70px;
+            z-index: 1;
+            line-height: normal;
+            background-color: white;
+            padding-bottom: 40px;
+            display: none;
+        }
+        .headmenu li:first-child:hover .menu-2{
+            display: block;
+        }
+        .menuwrap{
+            max-width: 1170px;
+            margin: 0 auto;
 
+        }
+        .menuwrap .menu-vertical>li{
+            min-width: 177px;
+            padding-right: 20px;
+            box-sizing: border-box;
+        }
+        .menuwrap ul li ul li{
+            float: none;
+            padding-top: 10px;
+            margin: 0;
+        }
+        .menuwrap ul li ul{
+            padding: 0;
+        }
+.menu-vertical{
+    padding-top: 30px;
+}
+        
