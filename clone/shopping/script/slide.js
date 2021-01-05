@@ -31,6 +31,7 @@ window.onload=function(){
         productSlide[i].style.width=wid;
     }
    }
+//    document.getElementById("footer").innerHTML="<object type='text/html' data='hi.htm'></object>";
 };
 
 window.addEventListener('resize',function(){
